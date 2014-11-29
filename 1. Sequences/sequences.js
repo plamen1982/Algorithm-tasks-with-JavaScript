@@ -13,8 +13,4 @@ function Solve(params) {
 
 	return answer;
 }
-	// OK - Test length of ther arraylenghtconsole.log(params.length) console.log(N)
-	// OK - Test for comparing numbers from the array if(params[1]===params[2]){ }
-	//OK  - Test for sum from an array	console.log(params[1] + params[2])
-	//OK - Test for print for loop
-	//OK - Test for - minus values
+
