@@ -1,7 +1,9 @@
 function lastDigitAsText(number){
+	/*
 	if (number < 0) {
 		number = number * (- 1);
 	}
+	*/
 	var lastDigit = number % 10;
 	switch (lastDigit){
 		case 1: console.log('One');
