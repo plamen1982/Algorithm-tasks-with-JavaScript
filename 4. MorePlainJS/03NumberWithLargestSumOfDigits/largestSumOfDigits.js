@@ -8,7 +8,7 @@ function findLargestBySumOfDigits(nums){
 	var index;
 	var current = 0;
 	for(i = 0; i < arguments.length; i++){
-		if(arguments[i] === 'string'){
+		if( typeof(arguments[i]) == 'string'){
 			return 'undefined'
 		}
 		if(arguments[i] % 1 !== 0){
