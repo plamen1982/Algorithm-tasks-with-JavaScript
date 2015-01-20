@@ -3,23 +3,12 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>index</title>
-    </head>
-    <body>
-    <div id="outerDiv">
-        <div
-                class="first">
-            <div>
-                <div>hello</div>
-            </div>
-        </div>
-        <div>hi
-            <div></div>
-        </div>
-        <div>I am a div</div>
-    </div>
-    <script src='countDivs.js'></script>
-    </body>
-</html>
+ 
+<textarea id="theHtmlString" rows="4" cols="50">
 
+</textarea>
+<button onclick = "countDivs(document.getElementById('theHtmlString').value)">Count the Divs</button>
+<p id="result"></p>
+<script src="countDivs.js"></script>
 </body>
 </html>
