@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test Local Storage</title>
+</head>
+
+<body>
+<div class="wrapper">
+    <h1>Web storage</h1>
+
+    <p style="font-family: 'Open Sans Condensed', sans-serif;">This example is designed to demonstrate usage of the <a href="http://dev.w3.org/html5/webstorage/">
+	W3C Web Storage API</a>. It should work as far back as IE8. Choose custom background colours, logos and fonts from the below drop down menus, then try closing
+	and reopening the page — you will find that your choices are remembered, as they are stored using Web Storage. You can also see the </p>
+
+    <form>
+      <div>
+        <label for="bgcolor">Choose background color:</label>
+	    <input class="color" id="bgcolor" value="FFFFFF" autocomplete="off" style="color: rgb(0, 0, 0); background-image: none; background-color: rgb(255, 255, 255);">
+      </div>
+      <div>
+        <label for="font">Choose font style:</label>
+        <select id="font">
+        	<option value="'Open Sans Condensed', sans-serif" selected="">Sans-serif</option>
+        	<option value="'Bitter', serif">Serif</option>
+        	<option value="'Ubuntu Mono'">Monospace</option>
+        </select>
+      </div>
+      <div>
+        <label for="image">Choose:And eventually you can become a magical ninja master</label>
+        <select id="image">
+        	<option value="images/ma-coding-club-flag.png" selected="">MA Coding Club</option>
+        	<option value="images/softuni.jpg">SoftUni</option>
+        	<option value="images/telerikacademy.jpg">Telerik Academy</option>
+        </select>
+      </div>
+    </form>
+
+    <footer></footer>
+    <img src="images/ma-coding-club-flag.png">
+  </div>
+
+ 
+<script type="text/javascript">
+   var htmlElement = document.querySelector('html');
+   var pEmement = document.querySelector('p');
+   var imgElement = document.querySelector('img');
+   
+   var bgcolorForm = document.querySelector('#bgcolor');
+   var fontForm = document.querySelector('#font');
+   var imageForm = document.querySelector('#image');
+   
+   if(!localStorage.getItem('bgcolor')){
+	populateStorage();
+   }
+   
+   else {
+	setStyles();
+   }
+   
+   function populateStorage() {
+	localStorage.setItem('bgcolor', document.querySelector('#bgcolor').value);
+	localStorage.setItem('font', document.querySelector('#font').value);
+	localStorage.setItem('image', document.querySelector('#image').value);
+	
+	setStyles();
+   }
+   
+   function setStyles(){
+	var currentColor = localStorage.getItem('bgcolor');
+	var currentFont = localStorage.getItem('font');
+	var currentImage = localStorage.getItem('image');
+	
+	document.getElementById('bgcolor').value = currentColor;
+	document.getElementById('font').value = currentFont;
+	document.getElementById('image').value = currentImage;
+	
+	htmlElement.style.backgroundColor = '#' + currentColor;
+	pEmement.style.fontFamily = currentFont;
+	imgElement.setAttribute('src', currentImage)
+   }
+   
+   bgcolorForm.onchange = populateStorage;
+   fontForm.onchange = populateStorage;
+   imageForm.onchange = populateStorage;
+</script>
+</body>
+
