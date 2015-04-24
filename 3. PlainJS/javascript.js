@@ -10,7 +10,7 @@
  * 15 / 1, 2, 3, 6, 7, 9, 11, 88, 4443,
  * */
 
- function printNumbers(number) {
+ function printNumbers(n) {
     for (var i = 1; i < n; i++) {
         if (i % 4 != 0 && i % 5 != 0) {
             console.log(i);
